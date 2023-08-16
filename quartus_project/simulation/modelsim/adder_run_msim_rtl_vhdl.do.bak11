@@ -1,0 +1,20 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/xor_gate.vhd}
+vcom -93 -work work {F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/func.vhd}
+vcom -93 -work work {F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/and_gate.vhd}
+vcom -93 -work work {F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd}
+
+vcom -93 -work work {F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/tb_adder.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  tb_adder
+
+add wave *
+view structure
+view signals
+run 50 ns

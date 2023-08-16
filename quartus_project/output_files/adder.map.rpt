@@ -1,0 +1,393 @@
+Analysis & Synthesis report for adder
+Thu Oct 21 02:11:24 2021
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 21 02:11:24 2021       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; adder                                       ;
+; Top-level Entity Name              ; adder                                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 113                                         ;
+;     Total combinational functions  ; 113                                         ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 98                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; adder              ; adder              ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; adder.vhd                        ; yes             ; User VHDL File  ; F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd    ;         ;
+; xor_gate.vhd                     ; yes             ; User VHDL File  ; F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/xor_gate.vhd ;         ;
+; func.vhd                         ; yes             ; User VHDL File  ; F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/func.vhd     ;         ;
+; and_gate.vhd                     ; yes             ; User VHDL File  ; F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/and_gate.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 113             ;
+;                                             ;                 ;
+; Total combinational functions               ; 113             ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 74              ;
+;     -- 3 input functions                    ; 36              ;
+;     -- <=2 input functions                  ; 3               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 113             ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+;     -- Dedicated logic registers            ; 0               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 98              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; func:func_4|Y~0 ;
+; Maximum fan-out                             ; 6               ;
+; Total fan-out                               ; 541             ;
+; Average fan-out                             ; 1.75            ;
++---------------------------------------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                           ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------+--------------+
+; |adder                           ; 113 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 98   ; 0            ; |adder                             ; adder       ; work         ;
+;    |and_gate:\GEN4:1:and_gate4|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|and_gate:\GEN4:1:and_gate4  ; and_gate    ; work         ;
+;    |and_gate:\GEN4:3:and_gate4|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|and_gate:\GEN4:3:and_gate4  ; and_gate    ; work         ;
+;    |func:\GEN2:0:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:0:func2          ; func        ; work         ;
+;    |func:\GEN2:10:func2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:10:func2         ; func        ; work         ;
+;    |func:\GEN2:11:func2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:11:func2         ; func        ; work         ;
+;    |func:\GEN2:12:func2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:12:func2         ; func        ; work         ;
+;    |func:\GEN2:13:func2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:13:func2         ; func        ; work         ;
+;    |func:\GEN2:14:func2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:14:func2         ; func        ; work         ;
+;    |func:\GEN2:1:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:1:func2          ; func        ; work         ;
+;    |func:\GEN2:2:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:2:func2          ; func        ; work         ;
+;    |func:\GEN2:3:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:3:func2          ; func        ; work         ;
+;    |func:\GEN2:4:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:4:func2          ; func        ; work         ;
+;    |func:\GEN2:5:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:5:func2          ; func        ; work         ;
+;    |func:\GEN2:6:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:6:func2          ; func        ; work         ;
+;    |func:\GEN2:7:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:7:func2          ; func        ; work         ;
+;    |func:\GEN2:8:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:8:func2          ; func        ; work         ;
+;    |func:\GEN2:9:func2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN2:9:func2          ; func        ; work         ;
+;    |func:\GEN3:0:func3|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:0:func3          ; func        ; work         ;
+;    |func:\GEN3:1:func3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:1:func3          ; func        ; work         ;
+;    |func:\GEN3:2:func3|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:2:func3          ; func        ; work         ;
+;    |func:\GEN3:3:func3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:3:func3          ; func        ; work         ;
+;    |func:\GEN3:4:func3|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:4:func3          ; func        ; work         ;
+;    |func:\GEN3:5:func3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:5:func3          ; func        ; work         ;
+;    |func:\GEN3:6:func3|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN3:6:func3          ; func        ; work         ;
+;    |func:\GEN4:0:func4|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN4:0:func4          ; func        ; work         ;
+;    |func:\GEN4:2:func4|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN4:2:func4          ; func        ; work         ;
+;    |func:\GEN5:0:func5|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:\GEN5:0:func5          ; func        ; work         ;
+;    |func:func_10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_10                ; func        ; work         ;
+;    |func:func_11|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_11                ; func        ; work         ;
+;    |func:func_12|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_12                ; func        ; work         ;
+;    |func:func_13|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_13                ; func        ; work         ;
+;    |func:func_14|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_14                ; func        ; work         ;
+;    |func:func_15|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_15                ; func        ; work         ;
+;    |func:func_16|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_16                ; func        ; work         ;
+;    |func:func_17|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_17                ; func        ; work         ;
+;    |func:func_18|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_18                ; func        ; work         ;
+;    |func:func_19|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_19                ; func        ; work         ;
+;    |func:func_20|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_20                ; func        ; work         ;
+;    |func:func_21|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_21                ; func        ; work         ;
+;    |func:func_22|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_22                ; func        ; work         ;
+;    |func:func_23|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_23                ; func        ; work         ;
+;    |func:func_24|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_24                ; func        ; work         ;
+;    |func:func_25|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_25                ; func        ; work         ;
+;    |func:func_26|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_26                ; func        ; work         ;
+;    |func:func_27|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_27                ; func        ; work         ;
+;    |func:func_28|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_28                ; func        ; work         ;
+;    |func:func_29|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_29                ; func        ; work         ;
+;    |func:func_2|                 ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_2                 ; func        ; work         ;
+;    |func:func_30|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_30                ; func        ; work         ;
+;    |func:func_31|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_31                ; func        ; work         ;
+;    |func:func_32|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_32                ; func        ; work         ;
+;    |func:func_3|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_3                 ; func        ; work         ;
+;    |func:func_4|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_4                 ; func        ; work         ;
+;    |func:func_5|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_5                 ; func        ; work         ;
+;    |func:func_6|                 ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_6                 ; func        ; work         ;
+;    |func:func_7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_7                 ; func        ; work         ;
+;    |func:func_8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_8                 ; func        ; work         ;
+;    |func:func_9|                 ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|func:func_9                 ; func        ; work         ;
+;    |xor_gate:\GEN1:1:xor_gate1|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN1:1:xor_gate1  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:0:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:0:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:10:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:10:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:11:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:11:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:12:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:12:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:13:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:13:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:14:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:14:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:15:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:15:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:16:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:16:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:17:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:17:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:18:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:18:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:19:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:19:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:1:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:1:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:20:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:20:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:21:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:21:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:22:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:22:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:23:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:23:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:24:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:24:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:25:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:25:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:26:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:26:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:27:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:27:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:28:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:28:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:29:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:29:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:2:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:2:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:30:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:30:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:31:xor_gate7| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:31:xor_gate7 ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:3:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:3:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:4:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:4:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:5:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:5:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:6:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:6:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:7:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:7:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:8:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:8:xor_gate7  ; xor_gate    ; work         ;
+;    |xor_gate:\GEN7:9:xor_gate7|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adder|xor_gate:\GEN7:9:xor_gate7  ; xor_gate    ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 98                          ;
+; cycloneiii_lcell_comb ; 113                         ;
+;     normal            ; 113                         ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 74                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 7.02                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Thu Oct 21 02:11:07 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off adder -c adder
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: adder-structure File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd Line: 12
+    Info (12023): Found entity 1: adder File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file xor_gate.vhd
+    Info (12022): Found design unit 1: xor_gate-dataflow File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/xor_gate.vhd Line: 11
+    Info (12023): Found entity 1: xor_gate File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/xor_gate.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file func.vhd
+    Info (12022): Found design unit 1: func-dataflow File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/func.vhd Line: 12
+    Info (12023): Found entity 1: func File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/func.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file and_gate.vhd
+    Info (12022): Found design unit 1: and_gate-dataflow File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/and_gate.vhd Line: 11
+    Info (12023): Found entity 1: and_gate File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/and_gate.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file tb_adder.vhd
+    Info (12022): Found design unit 1: tb_adder-behavior File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/tb_adder.vhd Line: 8
+    Info (12023): Found entity 1: tb_adder File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/tb_adder.vhd Line: 5
+Info (12127): Elaborating entity "adder" for the top level hierarchy
+Info (12128): Elaborating entity "and_gate" for hierarchy "and_gate:\GEN1:0:and_gate1" File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd Line: 24
+Info (12128): Elaborating entity "xor_gate" for hierarchy "xor_gate:\GEN1:0:xor_gate1" File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd Line: 25
+Info (12128): Elaborating entity "func" for hierarchy "func:\GEN2:0:func2" File: F:/Desktop/Academics/Sem_1/671/Assignment/A4/quartus_project/adder.vhd Line: 30
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 211 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 65 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 113 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4781 megabytes
+    Info: Processing ended: Thu Oct 21 02:11:24 2021
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:37
+
+
